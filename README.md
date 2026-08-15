@@ -377,3 +377,7 @@ Virtual Summer Internship 2026
 > 🚧 **VoiceScript is currently under active development.**
 
 The architecture and product requirements are defined; implementation is now underway.
+
+---
+
+Made with love by Anushiv.❤️
