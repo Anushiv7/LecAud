@@ -1,8 +1,8 @@
-# 🎙️ VoiceScript
+# 🎙️ LecAud
 
 > **Turn lecture audio into study-ready material.**
 
-VoiceScript is an AI-powered study assistant that transforms recorded or uploaded lecture audio into structured learning material.
+LecAud is an AI-powered study assistant that transforms recorded or uploaded lecture audio into structured learning material.
 
 The goal is simple: instead of spending hours turning a messy lecture recording into usable notes, let AI handle the first pass — from **audio → transcript → study guide → quiz**.
 
@@ -14,7 +14,7 @@ This project is being developed as a capstone project for the **MirAI School of 
 
 ## ✨ What I'm Building
 
-VoiceScript is designed to take a lecture recording and turn it into:
+LecAud is designed to take a lecture recording and turn it into:
 
 * 🎙️ **Lecture Transcripts** — Convert spoken lectures into structured text
 * 📚 **Study Guides** — Extract key concepts, topics, summaries, definitions, and applications
@@ -55,11 +55,11 @@ Transcript  Study Guide
 
 ---
 
-## 🧠 Why VoiceScript?
+## 🧠 Why LecAud?
 
 Students often have to spend significant time turning lecture recordings and unstructured notes into something they can actually study from.
 
-VoiceScript aims to reduce that friction by creating a complete study workflow from a single lecture recording.
+LecAud aims to reduce that friction by creating a complete study workflow from a single lecture recording.
 
 Instead of:
 
@@ -70,7 +70,7 @@ Lecture → Messy Notes → Manual Organization → Manual Revision
 the goal is:
 
 ```text
-Lecture → VoiceScript → Study Material → Revision
+Lecture → LecAud → Study Material → Revision
 ```
 
 ---
@@ -172,7 +172,7 @@ The project is intentionally built around free-tier tooling wherever possible.
 ## 📁 Project Structure
 
 ```text
-VoiceScript/
+LecAud/
 │
 ├── app.py
 ├── requirements.txt
@@ -222,8 +222,8 @@ The project documentation also maintains a dedicated execution flow, scaffolding
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Anushiv7/VoiceScript.git
-cd VoiceScript
+git clone https://github.com/Anushiv7/LecAud.git
+cd LecAud
 ```
 
 ### 2. Create a virtual environment
@@ -374,7 +374,7 @@ Virtual Summer Internship 2026
 
 ## 📌 Status
 
-> 🚧 **VoiceScript is currently under active development.**
+> 🚧 **LecAud is currently under active development.**
 
 The architecture and product requirements are defined; implementation is now underway.
 
