@@ -1,0 +1,48 @@
+# src/study_guide_generator.py
+"""Generate a markdown study guide from a transcript using Gemini."""
+import time
+import google.generativeai as genai
+from typing import Tuple, Optional
+
+MAX_RETRIES = 2
+BASE_DELAY = 1.0
+
+
+def _configure_api(api_key: str) -> None:
+    genai.configure(api_key=api_key)
+
+
+STUDY_GUIDE_PROMPT = """You are a knowledgeable tutor.
+Given the following lecture transcript, produce a concise, well-structured study guide in markdown.
+Use headings, bullet points, and bold for key concepts.
+Do not include any preamble or postscript.
+
+Transcript:
+{transcript}
+"""
+
+
+def generate_study_guide(
+    transcript: str, api_key: str
+) -> Tuple[bool, Optional[str], Optional[str]]:
+    """Generate a markdown study guide.
+
+    Returns (success, guide_markdown, error_message).
+    """
+    _configure_api(api_key)
+    model = genai.GenerativeModel("gemini-1.5-flash")
+
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            prompt = STUDY_GUIDE_PROMPT.format(transcript=transcript)
+            response = model.generate_content(prompt)
+            guide = response.text.strip() if response.text else ""
+            if guide:
+                return True, guide, None
+            raise ValueError("Empty guide returned by Gemini.")
+        except Exception as exc:
+            if attempt == MAX_RETRIES:
+                return False, None, f"Study guide generation failed: {exc}"
+            time.sleep(BASE_DELAY * (2 ** (attempt - 1)))
+
+    return False, None, "Unexpected generation error."
