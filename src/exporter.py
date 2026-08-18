@@ -39,3 +39,24 @@ def get_text_bytes(content: str) -> bytes:
 def get_json_bytes(data) -> bytes:
     """Return data serialized as JSON bytes (for Streamlit download_button)."""
     return json.dumps(data, indent=2, ensure_ascii=False).encode("utf-8")
+
+
+from datetime import datetime
+
+class Exporter:
+    def export_transcript_txt(self, transcript: str) -> bytes:
+        return get_text_bytes(transcript)
+
+    def export_study_guide_txt(self, guide: str) -> bytes:
+        return get_text_bytes(guide)
+
+    def export_quiz_json(self, quiz: dict) -> bytes:
+        return get_json_bytes(quiz)
+
+    def export_combined_txt(self, transcript: str, guide: str, quiz: dict) -> bytes:
+        combined = f"TRANSCRIPT\n\n{transcript}\n\nSTUDY GUIDE\n\n{guide}\n\nQUIZ\n\n{json.dumps(quiz, indent=2)}"
+        return get_text_bytes(combined)
+
+    def get_filename(self, file_type: str) -> str:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        return f"{file_type}_{timestamp}"

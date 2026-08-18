@@ -40,3 +40,21 @@ def get_gemini_key() -> Optional[str]:
                 return val.strip().strip('"').strip("'")
 
     return None
+
+# Alias for backwards compatibility
+get_gemini_api_key = get_gemini_key
+
+class Config:
+    """Application configuration constants."""
+    MAX_FILE_SIZE_MB = 25
+    MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024
+    SUPPORTED_AUDIO_FORMATS = ('wav', 'mp3', 'm4a', 'ogg')
+    GEMINI_MODEL_AUDIO = "gemini-3.6-flash"
+    GEMINI_MODEL_TEXT = "gemini-3.6-flash"
+    GEMINI_MAX_RETRIES = 3
+    GEMINI_RETRY_WAIT_BASE = 1
+    QUIZ_QUESTION_COUNT = 5
+    QUIZ_OPTIONS_COUNT = 4
+    APP_TITLE = "🎙️ LecAud"
+    APP_ICON = "🎙️"
+    PAGE_LAYOUT = "wide"
