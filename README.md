@@ -406,3 +406,7 @@ Built as part of the **MirAI School of Technology Virtual Summer Internship 2026
 ## 📜 License
 
 This project is intended as an educational and open-source capstone project.
+---
+
+Made with ❤️ by Anushiv Prakash for MirAI School of Technology Virtual Summer Internship 2026
+
