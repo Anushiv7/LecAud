@@ -20,7 +20,6 @@ Each object must have:
 Return ONLY raw JSON, no extra text.
 
 Transcript:
-{transcript}
 """
 
 
@@ -32,7 +31,7 @@ def generate_quiz(
 
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            prompt = QUIZ_PROMPT.format(transcript=transcript)
+            prompt = f'''{QUIZ_PROMPT}\nTranscript:\n{transcript}'''
             response = client.models.generate_content(
                 model="gemini-3.6-flash",
                 contents=prompt,

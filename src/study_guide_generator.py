@@ -14,7 +14,6 @@ Use headings, bullet points, and bold for key concepts.
 Do not include any preamble or postscript.
 
 Transcript:
-{transcript}
 """
 
 
@@ -29,7 +28,7 @@ def generate_study_guide(
 
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            prompt = STUDY_GUIDE_PROMPT.format(transcript=transcript)
+            prompt = f'''{STUDY_GUIDE_PROMPT}\nTranscript:\n{transcript}'''
             response = client.models.generate_content(
                 model="gemini-3.6-flash",
                 contents=prompt
