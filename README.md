@@ -255,7 +255,7 @@ Deployment requires:
 
 The deployed application:
 
-**https://lecaud.streamlit.app**
+**[https://lecaud.streamlit.app](https://lecaud.streamlit.app/)**
 
 > The live URL should be considered the authoritative demo only after the final cloud deployment test has passed.
 
